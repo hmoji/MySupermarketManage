@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+
+	<!-- spring相关配置 -->
+
+
+	<!-- 开启AOP注解 -->
+	<aop:aspectj-autoproxy />
+	<!-- 注解扫描器 -->
+	<context:component-scan base-package="smmanage">
+		<context:exclude-filter type="annotation"
+			expression="java.lang.ModuleLayer.Controller" />
+	</context:component-scan>
+	<!-- 引入外部配置文件 -->
+	<context:property-placeholder
+		location="classpath:dbconfig.properties" />
+	<!-- 数据源/数据库连接池 -->
+	<bean id="comboPooledDataSource"
+		class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="driverClass" value="${driver}"></property>
+		<property name="jdbcUrl" value="${url}"></property>
+		<property name="user" value="${user}"></property>
+		<property name="password" value="${passworld}"></property>
+	</bean>
+	<!-- mybaitis配置 -->
+	<bean id="sqlSessionFactory"
+		class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="comboPooledDataSource"></property>
+		<property name="mapperLocations" value="classpath:mapper/*"></property>
+	</bean>
+	<!-- 扫描器，将mybatis的接口加入到IOC容器中 -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="smmanage.dao"></property>
+	</bean>
+	<!-- 事务控制 -->
+	<bean id="dataSourceTransactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="comboPooledDataSource"></property>
+	</bean>
+
+</beans>
