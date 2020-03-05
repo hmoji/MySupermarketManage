@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?> <!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="smmanage.dao.GoodsMapper"><!-- 命名空间改成自己的映射类 -->
+	<select id="queryGoodsByName" resultType="smmanage.entity.Goods" parameterType="String"> <!-- resultType必须用全类名 -->
+	select * from goods where name= #{name}  
+	</select>
+</mapper>
