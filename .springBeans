@@ -8,6 +8,7 @@
 	<enableImports><![CDATA[false]]></enableImports>
 	<configs>
 		<config>src/main/resources/springConfig.xml</config>
+		<config>src/main/resources/spring-mvc.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>

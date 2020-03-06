@@ -10,7 +10,7 @@
 <dependency>
     <groupId>org.springframework</groupId>
     <artifactId>spring-webmvc</artifactId>
-    <version>5.2.2.RELEASE</version>
+    <version>5.2.4.RELEASE</version>
 </dependency>
 
 <!-- https://mvnrepository.com/artifact/org.mybatis/mybatis-spring -->
@@ -81,6 +81,7 @@
     <version>4.12</version>
     <scope>test</scope>
 </dependency>
+
 
 
 
