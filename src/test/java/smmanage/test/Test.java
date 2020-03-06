@@ -2,7 +2,6 @@ package smmanage.test;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-
 import smmanage.dao.GoodsMapper;
 import smmanage.entity.Goods;
 
@@ -13,4 +12,4 @@ public static void main(String[] args) {
 	Goods goods=goodsMapper.queryGoodsByName("test");
 	System.out.println(goods);
 }
-}	
+}

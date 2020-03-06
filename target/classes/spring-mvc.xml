@@ -6,9 +6,13 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
-		
-<context:component-scan base-package="smmanage.contraller"></context:component-scan>
+	
+	
+	<!-- 注解驱动 -->	
 <mvc:annotation-driven></mvc:annotation-driven>
+	<!-- 注解扫描器 -->
+<context:component-scan base-package="smmanage.contraller"></context:component-scan>
+	<!-- 视图解析器 -->
 <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 	<property name="prefix" value="/WEB-INF/view/"></property>
 	<property name="suffix" value=".jsp"></property>
