@@ -4,11 +4,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>修改结果</title>
 </head>
 <body>
 <% out.print(request.getAttribute("updateresult")); %><br/>
 <a href="index.jsp">返回首页</a>
-<a href="SelectResult.jsp">继续添加</a>
 </body>
 </html>

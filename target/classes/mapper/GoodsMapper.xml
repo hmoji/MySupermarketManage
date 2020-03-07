@@ -9,11 +9,12 @@
 	insert into goods(name,price,number) values(#{name},#{price},#{number})
 	</insert>
 	
-	<update id="updatePrice" parameterType="int">
-	update goods set price=#{price} where name=#[name]
+	<update id="update" parameterType="smmanage.entity.Goods">
+	update goods set price=#{price},number=#{number} where name=#{name}
 	</update>
 	
-	<update id="updateNumber" parameterType="int">
-	update goods set number=#{number} where name=#[name]
-	</update>
+	<!-- 关闭mysql安全模式 -->
+ 	<sql id="dissafe">
+	SET SQL_SAFE_UPDATES = 0
+	</sql> 
 </mapper>

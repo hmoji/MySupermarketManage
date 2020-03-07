@@ -1,7 +1,7 @@
 package smmanage.service;
 
-public interface Update {
-	boolean updatePriceService(String name, int price);
+import smmanage.entity.Goods;
 
-	boolean updateNumberService(String name, int number);
+public interface Update {
+	boolean update(Goods goods);
 }

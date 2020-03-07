@@ -23,8 +23,12 @@ public class Contraller {
 		ModelAndView mav=new ModelAndView();
 		mav.setViewName("SelectResult");
 		Goods result = select.selectservice(name);
-		if(result!=null) 
+		if(result!=null) {
 		mav.addObject("selectresult", result);
+		mav.addObject("nameresult", result.getName());
+		mav.addObject("priceresult", result.getPrice());
+		mav.addObject("numberresult", result.getNumber());		
+		}
 		else {
 			mav.addObject("selectresult", "抱歉，该商品不存在！");
 		}
@@ -42,22 +46,14 @@ public class Contraller {
 		return mav.addObject("insertresult", "添加失败！");
 	}
 	
-	@RequestMapping("updateprice")
-	public ModelAndView updateprice(String name,int price) {
+	@RequestMapping("update")
+	public ModelAndView update(Goods goods) {
+		boolean result=false;
+		System.out.println("修改请求已拦截");
 		Update update=new UpdateImpl();
 		ModelAndView mav=new ModelAndView();
 		mav.setViewName("UpdateResult");
-		boolean result=update.updatePriceService(name, price);
-		if(result)
-			return mav.addObject("updateresult", "修改成功！");
-		return mav.addObject("updateresult", "修改失败！");
-	}
-	@RequestMapping("updatenumber")
-	public ModelAndView updatenumber(String name,int number) {
-		Update update=new UpdateImpl();
-		ModelAndView mav=new ModelAndView();
-		mav.setViewName("UpdateResult");
-		boolean result=update.updateNumberService(name, number);
+		result=update.update(goods);
 		if(result)
 			return mav.addObject("updateresult", "修改成功！");
 		return mav.addObject("updateresult", "修改失败！");

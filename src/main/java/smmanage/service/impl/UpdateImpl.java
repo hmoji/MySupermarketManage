@@ -1,32 +1,27 @@
 package smmanage.service.impl;
 
+import javax.annotation.Resource;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.stereotype.Service;
 
 import smmanage.dao.GoodsMapper;
+import smmanage.entity.Goods;
 import smmanage.service.Update;
-
+@Service
+@Resource
 public class UpdateImpl implements Update {
 	ApplicationContext Context = new ClassPathXmlApplicationContext("springConfig.xml");
 	GoodsMapper goodsMapper=(GoodsMapper)Context.getBean("goodsMapper");
-	public boolean updatePriceService(String name, int price) {
+	public boolean update(Goods goods) {
 		try {
-			goodsMapper.updatePrice(name, price);
+			goodsMapper.dissafe();
+			goodsMapper.update(goods);
 			return true;
 		} catch (Exception e) {
+			e.printStackTrace();
 			return false;
-		}
 	}
-
-	public boolean updateNumberService(String name, int number) {
-		try {
-			goodsMapper.updateNumber(name, number);
-			return true;
-		} catch (Exception e) {
-			return false;
-		}
 	}
-
-
-
 }

@@ -10,12 +10,10 @@
 <body>
 转发成功！<br/>
 查询结果：<% out.print(request.getAttribute("selectresult")); %><br/>
-<form action="updateprice">
-修改价格：<input type="text"  name="price">
-<input type="submit" value="提交">
-</form>
-<form action="updatenumber">
-修改余量：<input type="text"  name="number">
+<form action="update">
+<input type="hidden" name="name" value="<%= request.getAttribute("nameresult") %>">
+修改价格：<input type="text"  name="price" value="<%=request.getAttribute("priceresult")%>">
+修改余量：<input type="text"  name="number" value="<%=request.getAttribute("numberresult")%>">
 <input type="submit" value="提交">
 </form>
 <a href="index.jsp">返回首页</a>
