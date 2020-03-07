@@ -10,6 +10,14 @@
 <body>
 转发成功！<br/>
 查询结果：<% out.print(request.getAttribute("selectresult")); %><br/>
+<form action="updateprice">
+修改价格：<input type="text"  name="price">
+<input type="submit" value="提交">
+</form>
+<form action="updatenumber">
+修改余量：<input type="text"  name="number">
+<input type="submit" value="提交">
+</form>
 <a href="index.jsp">返回首页</a>
 </body>
 </html>

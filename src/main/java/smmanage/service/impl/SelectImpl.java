@@ -12,10 +12,9 @@ import smmanage.service.Select;
 @Service
 @Resource
 public class SelectImpl implements Select {
-
+	ApplicationContext Context = new ClassPathXmlApplicationContext("springConfig.xml");
+	GoodsMapper goodsMapper=(GoodsMapper)Context.getBean("goodsMapper");
 	public Goods selectservice(String name) {
-		ApplicationContext Context = new ClassPathXmlApplicationContext("springConfig.xml");
-		GoodsMapper goodsMapper=(GoodsMapper)Context.getBean("goodsMapper");
 		Goods goods=goodsMapper.queryGoodsByName(name);
 		System.out.println(goods);
 		return goods;

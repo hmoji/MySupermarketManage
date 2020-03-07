@@ -8,4 +8,12 @@
 	<insert id="insertGoods" parameterType="smmanage.entity.Goods">
 	insert into goods(name,price,number) values(#{name},#{price},#{number})
 	</insert>
+	
+	<update id="updatePrice" parameterType="int">
+	update goods set price=#{price} where name=#[name]
+	</update>
+	
+	<update id="updateNumber" parameterType="int">
+	update goods set number=#{number} where name=#[name]
+	</update>
 </mapper>

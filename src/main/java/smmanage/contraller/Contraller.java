@@ -9,8 +9,10 @@ import org.springframework.web.servlet.ModelAndView;
 import smmanage.entity.Goods;
 import smmanage.service.Insert;
 import smmanage.service.Select;
+import smmanage.service.Update;
 import smmanage.service.impl.InsertImpl;
 import smmanage.service.impl.SelectImpl;
+import smmanage.service.impl.UpdateImpl;
 
 @Controller
 public class Contraller {
@@ -38,5 +40,26 @@ public class Contraller {
 		if(result) 
 			return mav.addObject("insertresult", "添加成功！");
 		return mav.addObject("insertresult", "添加失败！");
+	}
+	
+	@RequestMapping("updateprice")
+	public ModelAndView updateprice(String name,int price) {
+		Update update=new UpdateImpl();
+		ModelAndView mav=new ModelAndView();
+		mav.setViewName("UpdateResult");
+		boolean result=update.updatePriceService(name, price);
+		if(result)
+			return mav.addObject("updateresult", "修改成功！");
+		return mav.addObject("updateresult", "修改失败！");
+	}
+	@RequestMapping("updatenumber")
+	public ModelAndView updatenumber(String name,int number) {
+		Update update=new UpdateImpl();
+		ModelAndView mav=new ModelAndView();
+		mav.setViewName("UpdateResult");
+		boolean result=update.updateNumberService(name, number);
+		if(result)
+			return mav.addObject("updateresult", "修改成功！");
+		return mav.addObject("updateresult", "修改失败！");
 	}
 }
