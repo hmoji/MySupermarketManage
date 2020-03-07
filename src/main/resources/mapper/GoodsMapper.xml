@@ -4,4 +4,8 @@
 	<select id="queryGoodsByName" resultType="smmanage.entity.Goods" parameterType="String"> <!-- resultType必须用全类名 -->
 	select * from goods where name= #{name}  
 	</select>
+	
+	<insert id="insertGoods" parameterType="smmanage.entity.Goods">
+	insert into goods(name,price,number) values(#{name},#{price},#{number})
+	</insert>
 </mapper>

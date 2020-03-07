@@ -7,9 +7,18 @@
 <title>首页</title>
 </head>
 <body>
-<form action="welcome">
+商品查询：<br/>
+<form action="select">
 <input type="text" name="name">
-<input type="submit" value="查询">
+<input type="submit" value="查询"></form><br/>
+
+增加商品：<br/>
+<form action="add" method="post">
+名称：<input type="text" name="name"><br/>
+价格：<input type="text" name="price"><br/>
+数量：<input type="text" name="number"><br/>
+<input type="submit" value="提交">
 </form>
+
 </body>
 </html>
