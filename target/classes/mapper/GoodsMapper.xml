@@ -12,9 +12,5 @@
 	<update id="update" parameterType="smmanage.entity.Goods">
 	update goods set price=#{price},number=#{number} where name=#{name}
 	</update>
-	
-	<!-- 关闭mysql安全模式 -->
- 	<sql id="dissafe">
-	SET SQL_SAFE_UPDATES = 0
-	</sql> 
+
 </mapper>

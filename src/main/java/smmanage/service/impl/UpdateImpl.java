@@ -16,7 +16,6 @@ public class UpdateImpl implements Update {
 	GoodsMapper goodsMapper=(GoodsMapper)Context.getBean("goodsMapper");
 	public boolean update(Goods goods) {
 		try {
-			goodsMapper.dissafe();
 			goodsMapper.update(goods);
 			return true;
 		} catch (Exception e) {
