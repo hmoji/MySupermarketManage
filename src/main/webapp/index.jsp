@@ -7,6 +7,9 @@
 <title>首页</title>
 </head>
 <body>
-<a href="welcome">welcome</a>
+<form action="welcome">
+<input type="text" name="name">
+<input type="submit" value="查询">
+</form>
 </body>
 </html>

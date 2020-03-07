@@ -1,5 +1,7 @@
 package smmanage.service;
 
+import smmanage.entity.Goods;
+
 public interface Select {
-void selectservice();
+Goods selectservice(String name);
 }
