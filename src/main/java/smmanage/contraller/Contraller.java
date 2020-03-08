@@ -21,7 +21,6 @@ public class Contraller {
 	@RequestMapping("select")
 	public ModelAndView select(String name) {
 		Select select=new SelectImpl();
-		System.out.println("转发成功！");
 		ModelAndView mav=new ModelAndView();
 		
 		Goods result = select.selectservice(name);
