@@ -3,6 +3,7 @@ package smmanage.contraller;
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -29,6 +30,7 @@ public class Contraller {
 	@RequestMapping("select")
 	public ModelAndView select(String name) {
 		System.out.println("查询请求已拦截");
+		System.out.println("拦截控制------方法Interceptor执行中");
 		ModelAndView mav=new ModelAndView();
 		Goods result = select.selectservice(name);
 		if(result!=null) {
@@ -37,6 +39,7 @@ public class Contraller {
 			mav.addObject("nameresult", result.getName());
 			mav.addObject("priceresult", result.getPrice());
 			mav.addObject("numberresult", result.getNumber());	
+			System.out.println("即将返回");
 			return mav;
 		}
 		else {

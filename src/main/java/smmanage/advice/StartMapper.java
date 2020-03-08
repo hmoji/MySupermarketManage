@@ -1,4 +1,4 @@
-package smmanage.aop;
+package smmanage.advice;
 
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
@@ -9,10 +9,7 @@ import org.springframework.stereotype.Component;
 @Component
 @Aspect
 public class StartMapper {
-	@Pointcut("execution(* smmanage.contraller..*.*(..))")
-	public void pointcut() {
-	}
-	@Before("pointcut()")
+	@Before("execution(* smmanage.contraller..*.*(..))")
 	public void startmapperbefore() {
 		System.out.println("前置通知");
 	}
