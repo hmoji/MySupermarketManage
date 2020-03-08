@@ -23,18 +23,21 @@ public class Contraller {
 		Select select=new SelectImpl();
 		System.out.println("转发成功！");
 		ModelAndView mav=new ModelAndView();
-		mav.setViewName("SelectResult");
+		
 		Goods result = select.selectservice(name);
 		if(result!=null) {
-		mav.addObject("selectresult", result);
-		mav.addObject("nameresult", result.getName());
-		mav.addObject("priceresult", result.getPrice());
-		mav.addObject("numberresult", result.getNumber());		
+			mav.setViewName("SelectResult");
+			mav.addObject("selectresult", result);
+			mav.addObject("nameresult", result.getName());
+			mav.addObject("priceresult", result.getPrice());
+			mav.addObject("numberresult", result.getNumber());	
+			return mav;
 		}
 		else {
+			mav.setViewName("SelectNullResult");
 			mav.addObject("selectresult", "抱歉，该商品不存在！");
+			return mav;
 		}
-		return mav;
 	}
 	
 	@RequestMapping("add")

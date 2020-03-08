@@ -1,5 +1,6 @@
 eclipse.preferences.version=1
 encoding//src/main/webapp/WEB-INF/view/InsertResult.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/view/SelectNullResult.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/view/SelectResult.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/view/UpdateResult.jsp=UTF-8
 encoding//src/main/webapp/index.jsp=UTF-8
