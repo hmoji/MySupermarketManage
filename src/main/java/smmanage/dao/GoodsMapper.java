@@ -5,4 +5,5 @@ public interface GoodsMapper {
 		Goods queryGoodsByName(String name);
 		void insertGoods(Goods goods);
 		void update(Goods goods);
+		void delete(String name);
 }

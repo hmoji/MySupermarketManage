@@ -12,9 +12,13 @@
 查询结果：<% out.print(request.getAttribute("selectresult")); %><br/>
 <form action="update">
 <input type="hidden" name="name" value="<%= request.getAttribute("nameresult") %>">
-修改价格：<input type="text"  name="price" value="<%=request.getAttribute("priceresult")%>">
-修改余量：<input type="text"  name="number" value="<%=request.getAttribute("numberresult")%>">
+修改价格：<input type="text"  name="price" value="<%=request.getAttribute("priceresult")%>"><br/>
+修改余量：<input type="text"  name="number" value="<%=request.getAttribute("numberresult")%>"><br/>
 <input type="submit" value="提交">
+</form>
+<form action="delete">
+<input type="hidden" name="name" value="<%= request.getAttribute("nameresult") %>">
+<input type="submit" value="删除">
 </form>
 <a href="index.jsp">返回首页</a>
 </body>

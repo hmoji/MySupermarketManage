@@ -7,9 +7,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import smmanage.entity.Goods;
+import smmanage.service.Delete;
 import smmanage.service.Insert;
 import smmanage.service.Select;
 import smmanage.service.Update;
+import smmanage.service.impl.DeleteImpl;
 import smmanage.service.impl.InsertImpl;
 import smmanage.service.impl.SelectImpl;
 import smmanage.service.impl.UpdateImpl;
@@ -57,5 +59,16 @@ public class Contraller {
 		if(result)
 			return mav.addObject("updateresult", "修改成功！");
 		return mav.addObject("updateresult", "修改失败！");
+	}
+	
+	@RequestMapping("delete")
+	public ModelAndView delete(String name) {
+		Delete delete=new DeleteImpl();
+		ModelAndView mav=new ModelAndView();
+		mav.setViewName("DeleteResult");
+		boolean result=delete.DeleteSrevice(name);
+		if(result)
+			return mav.addObject("deleteresult", "删除成功");
+		return mav.addObject("deleteresult", "删除失败");
 	}
 }
