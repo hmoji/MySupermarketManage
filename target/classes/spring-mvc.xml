@@ -15,6 +15,7 @@
 <mvc:annotation-driven></mvc:annotation-driven>
 	<!-- 注解扫描器 -->
 <context:component-scan base-package="smmanage.contraller"></context:component-scan>
+<context:component-scan base-package="smmanage.service"></context:component-scan>
 <context:component-scan base-package="smmanage.aop"></context:component-scan>
 	<!-- 视图解析器 -->
 <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">

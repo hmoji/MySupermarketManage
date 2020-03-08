@@ -1,7 +1,9 @@
 package smmanage.service;
 
-import smmanage.entity.Goods;
+import org.springframework.stereotype.Service;
 
+import smmanage.entity.Goods;
+@Service
 public interface Select {
 Goods selectservice(String name);
 }

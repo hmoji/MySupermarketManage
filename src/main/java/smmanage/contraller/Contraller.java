@@ -18,11 +18,18 @@ import smmanage.service.impl.UpdateImpl;
 
 @Controller
 public class Contraller {
+	@Resource
+	private Select select;
+	@Resource
+	private Insert insert;
+	@Resource
+	private Update update;
+	@Resource
+	private Delete delete;
 	@RequestMapping("select")
 	public ModelAndView select(String name) {
-		Select select=new SelectImpl();
+		System.out.println("查询请求已拦截");
 		ModelAndView mav=new ModelAndView();
-		
 		Goods result = select.selectservice(name);
 		if(result!=null) {
 			mav.setViewName("SelectResult");
@@ -41,7 +48,7 @@ public class Contraller {
 	
 	@RequestMapping("add")
 	public ModelAndView add(Goods goods) {
-		Insert insert=new InsertImpl();
+		System.out.println("添加请求已拦截");
 		ModelAndView mav=new ModelAndView();
 		mav.setViewName("InsertResult");
 		boolean result=insert.InsertService(goods);
@@ -52,9 +59,8 @@ public class Contraller {
 	
 	@RequestMapping("update")
 	public ModelAndView update(Goods goods) {
-		boolean result=false;
 		System.out.println("修改请求已拦截");
-		Update update=new UpdateImpl();
+		boolean result=false;
 		ModelAndView mav=new ModelAndView();
 		mav.setViewName("UpdateResult");
 		result=update.update(goods);
@@ -65,7 +71,7 @@ public class Contraller {
 	
 	@RequestMapping("delete")
 	public ModelAndView delete(String name) {
-		Delete delete=new DeleteImpl();
+		System.out.println("删除请求已拦截");
 		ModelAndView mav=new ModelAndView();
 		mav.setViewName("DeleteResult");
 		boolean result=delete.DeleteSrevice(name);

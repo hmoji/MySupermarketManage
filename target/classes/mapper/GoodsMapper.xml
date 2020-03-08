@@ -16,5 +16,6 @@
 	<delete id="delete" parameterType="string">
 	delete from goods where name=#{name}
 	</delete>
+	
 
 </mapper>
