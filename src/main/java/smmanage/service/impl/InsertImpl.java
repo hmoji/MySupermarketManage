@@ -9,7 +9,7 @@ import smmanage.entity.Goods;
 import smmanage.service.Insert;
 @Service
 public class InsertImpl implements Insert{
-	ApplicationContext Context = new ClassPathXmlApplicationContext("springConfig.xml");
+	ApplicationContext Context = new ClassPathXmlApplicationContext("applicationContext.xml");
 	GoodsMapper goodsMapper=(GoodsMapper)Context.getBean("goodsMapper");
 	public boolean InsertService(Goods goods) {
 		try {

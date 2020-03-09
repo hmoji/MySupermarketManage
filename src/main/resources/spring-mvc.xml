@@ -15,7 +15,6 @@
 	<!-- 注解驱动 -->	
 <mvc:annotation-driven></mvc:annotation-driven>
 
-
 	<!-- 注解扫描器 -->
 <context:component-scan base-package="smmanage.contraller"></context:component-scan>
 <context:component-scan base-package="smmanage.service"></context:component-scan>

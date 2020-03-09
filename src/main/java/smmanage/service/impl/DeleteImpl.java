@@ -8,7 +8,7 @@ import smmanage.dao.GoodsMapper;
 import smmanage.service.Delete;
 @Service
 public class DeleteImpl implements Delete{
-	ApplicationContext Context = new ClassPathXmlApplicationContext("springConfig.xml");
+	ApplicationContext Context = new ClassPathXmlApplicationContext("applicationContext.xml");
 	GoodsMapper goodsMapper=(GoodsMapper)Context.getBean("goodsMapper");
 	public boolean DeleteSrevice(String name) {
 		try {

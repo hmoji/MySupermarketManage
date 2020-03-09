@@ -9,7 +9,7 @@ import smmanage.entity.Goods;
 import smmanage.service.Select;
 @Service
 public class SelectImpl implements Select {
-	ApplicationContext Context = new ClassPathXmlApplicationContext("springConfig.xml");
+	ApplicationContext Context = new ClassPathXmlApplicationContext("applicationContext.xml");
 	GoodsMapper goodsMapper=(GoodsMapper)Context.getBean("goodsMapper");
 	public Goods selectservice(String name) {
 		Goods goods=goodsMapper.queryGoodsByName(name);

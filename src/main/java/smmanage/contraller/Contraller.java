@@ -2,6 +2,8 @@ package smmanage.contraller;
 
 import javax.annotation.Resource;
 
+import org.apache.ibatis.session.SqlSession;
+import org.mybatis.spring.SqlSessionFactoryBean;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,10 +14,6 @@ import smmanage.service.Delete;
 import smmanage.service.Insert;
 import smmanage.service.Select;
 import smmanage.service.Update;
-import smmanage.service.impl.DeleteImpl;
-import smmanage.service.impl.InsertImpl;
-import smmanage.service.impl.SelectImpl;
-import smmanage.service.impl.UpdateImpl;
 
 @Controller
 public class Contraller {
@@ -27,6 +25,8 @@ public class Contraller {
 	private Update update;
 	@Resource
 	private Delete delete;
+	
+	
 	@RequestMapping("select")
 	public ModelAndView select(String name) {
 		System.out.println("查询请求已拦截");

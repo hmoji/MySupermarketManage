@@ -9,7 +9,7 @@ import smmanage.entity.Goods;
 import smmanage.service.Update;
 @Service
 public class UpdateImpl implements Update {
-	ApplicationContext Context = new ClassPathXmlApplicationContext("springConfig.xml");
+	ApplicationContext Context = new ClassPathXmlApplicationContext("applicationContext.xml");
 	GoodsMapper goodsMapper=(GoodsMapper)Context.getBean("goodsMapper");
 	public boolean update(Goods goods) {
 		try {
