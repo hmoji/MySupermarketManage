@@ -13,8 +13,8 @@ public class UpdateImpl implements Update {
 	GoodsMapper goodsMapper=(GoodsMapper)Context.getBean("goodsMapper");
 	public boolean update(Goods goods) {
 		try {
-			goodsMapper.update(goods);
-			return true;
+			boolean result=goodsMapper.update(goods);
+			return result;
 		} catch (Exception e) {
 			e.printStackTrace();
 			return false;

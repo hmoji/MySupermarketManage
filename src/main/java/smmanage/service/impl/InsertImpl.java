@@ -13,8 +13,8 @@ public class InsertImpl implements Insert{
 	GoodsMapper goodsMapper=(GoodsMapper)Context.getBean("goodsMapper");
 	public boolean InsertService(Goods goods) {
 		try {
-			goodsMapper.insertGoods(goods);
-			return true;
+			boolean result=goodsMapper.insertGoods(goods);
+			return result;
 		} catch (Exception e) {
 			return false;
 		}

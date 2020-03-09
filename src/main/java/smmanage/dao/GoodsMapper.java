@@ -6,7 +6,7 @@ import smmanage.entity.Goods;
 @Repository
 public interface GoodsMapper {
 		Goods queryGoodsByName(String name);
-		void insertGoods(Goods goods);
-		void update(Goods goods);
-		void delete(String name);
+		boolean insertGoods(Goods goods);
+		boolean update(Goods goods);
+		boolean delete(String name);
 }

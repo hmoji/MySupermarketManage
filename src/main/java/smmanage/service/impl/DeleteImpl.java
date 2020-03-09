@@ -12,8 +12,8 @@ public class DeleteImpl implements Delete{
 	GoodsMapper goodsMapper=(GoodsMapper)Context.getBean("goodsMapper");
 	public boolean DeleteSrevice(String name) {
 		try {
-			goodsMapper.delete(name);
-			return true;
+			boolean result=goodsMapper.delete(name);
+			return result;
 		} catch (Exception e) {
 			return false;
 		}

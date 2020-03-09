@@ -42,7 +42,7 @@
 	</servlet-mapping>
 	
 	<filter>
-	<filter-name>charset</filter-name>
+	<filter-name>CharacterEncoding</filter-name>
 	<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
 	<init-param>
 	<param-name>encoding</param-name>
@@ -58,7 +58,7 @@
 	</init-param>
 	</filter>
 	<filter-mapping>
-	<filter-name>charset</filter-name>
+	<filter-name>CharacterEncoding</filter-name>
 	<url-pattern>/*</url-pattern>
 	</filter-mapping>
 </web-app>
