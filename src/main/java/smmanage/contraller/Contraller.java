@@ -3,6 +3,7 @@ package smmanage.contraller;
 import javax.annotation.Resource;
 
 import org.apache.ibatis.session.SqlSession;
+import org.apache.tomcat.util.descriptor.web.LoginConfig;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,9 +11,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import smmanage.entity.Goods;
+import smmanage.entity.Staff;
 import smmanage.service.Delete;
 import smmanage.service.Insert;
 import smmanage.service.Select;
+import smmanage.service.StaffSelect;
 import smmanage.service.Update;
 
 @Controller
@@ -25,7 +28,22 @@ public class Contraller {
 	private Update update;
 	@Resource
 	private Delete delete;
+	@Resource
+	private StaffSelect staffselect;
 	
+	@RequestMapping("login")
+	public ModelAndView login(String name,String password) {
+		System.out.println("登录请求已拦截");
+		ModelAndView mav=new ModelAndView();
+		if(staffselect.staffselectservice(name)!=null&&staffselect.staffselectservice(name).getPassword().equals(password)) {
+			mav.setViewName("index");
+			return mav;
+		}else {
+			mav.setViewName("Error");
+			mav.addObject("result", "登陆失败，请检查您的账号或密码");
+			return mav;
+		}
+	}
 	
 	@RequestMapping("select")
 	public ModelAndView select(String name) {
