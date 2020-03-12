@@ -22,4 +22,8 @@ public int getLevel() {
 public void setLevel(int level) {
 	this.level = level;
 }
+@Override
+public String toString() {
+	return "Staff [name=" + name + ", password=" + password + ", level=" + level + "]";
+}
 }

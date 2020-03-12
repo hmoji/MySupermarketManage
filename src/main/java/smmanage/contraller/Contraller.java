@@ -1,6 +1,7 @@
 package smmanage.contraller;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpSession;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.tomcat.util.descriptor.web.LoginConfig;
@@ -31,11 +32,19 @@ public class Contraller {
 	@Resource
 	private StaffSelect staffselect;
 	
+	@RequestMapping("LoginWithSession")
+	public String LoginWithSession() {
+		return "index";
+	}
 	@RequestMapping("login")
-	public ModelAndView login(String name,String password) {
+	public ModelAndView login(String name,String password,HttpSession session) {
 		System.out.println("登录请求已拦截");
 		ModelAndView mav=new ModelAndView();
-		if(staffselect.staffselectservice(name)!=null&&staffselect.staffselectservice(name).getPassword().equals(password)) {
+		Staff staff=staffselect.staffselectservice(name);
+		if(staff!=null&&staff.getPassword().equals(password)) {
+			session.setAttribute("STAFF_SESSION", staff);
+			session.setMaxInactiveInterval(60*30);
+			System.out.println(session.getAttribute("STAFF_SESSION"));
 			mav.setViewName("index");
 			return mav;
 		}else {

@@ -20,6 +20,6 @@
 <input type="hidden" name="name" value="<%= request.getAttribute("nameresult") %>">
 <input type="submit" value="删除">
 </form>
-<a href="index.jsp">返回首页</a>
+<a href="LoginWithSession">返回首页</a>
 </body>
 </html>

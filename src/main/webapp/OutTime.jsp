@@ -4,11 +4,10 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>错误页面</title>
+<title>登录超时</title>
 </head>
 <body>
-额....出现了一些错误。<br/>
-<%=request.getAttribute("result") %><br/>
-<a href="LoginWithSession">返回登录</a>
+登录超时，请重新登陆。<br/>
+<a href="login.jsp">返回登录</a>
 </body>
 </html>

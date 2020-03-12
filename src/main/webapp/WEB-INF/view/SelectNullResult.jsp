@@ -8,6 +8,6 @@
 </head>
 <body>
 <% out.print(request.getAttribute("selectresult")); %><br/>
-<a href="index.jsp">返回首页</a>
+<a href="LoginWithSession">返回首页</a>
 </body>
 </html>

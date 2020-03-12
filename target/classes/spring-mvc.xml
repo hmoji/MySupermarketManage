@@ -10,7 +10,7 @@
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
 	
 
-	
+	<!-- AOP -->
 	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
 	<!-- 注解驱动 -->	
 <mvc:annotation-driven></mvc:annotation-driven>
@@ -28,6 +28,7 @@
 <mvc:interceptors>
 	<mvc:interceptor>
 		<mvc:mapping path="/**"/>
+		<mvc:exclude-mapping path="/login"/>
 		<bean class="smmanage.interceptor.Interceptor"></bean>
 	</mvc:interceptor>
 </mvc:interceptors>

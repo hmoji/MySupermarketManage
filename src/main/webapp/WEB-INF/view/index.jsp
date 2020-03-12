@@ -1,3 +1,4 @@
+<%@page import="smmanage.entity.Staff"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -8,6 +9,8 @@
 </head>
 <body>
 <h3>在使用前请确定mysql安全模式已关闭</h3>
+当前用户：<%Staff staff=(Staff)request.getSession().getAttribute("STAFF_SESSION");
+			out.print(staff.getName());%><br/>
 商品查询：<br/>
 <form action="select">
 <input type="text" name="name">
