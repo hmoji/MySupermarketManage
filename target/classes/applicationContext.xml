@@ -34,12 +34,12 @@
 	<property name="basePackage" value="smmanage.dao"></property>
 </bean>
 
-<!--  
+ 
  <bean id="dataSourceTransactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 	<property name="dataSource" ref="dataSource"></property>
 </bean>
 
 
-	<tx:annotation-driven transaction-manager="dataSourceTransactionManager"/> -->
+	<tx:annotation-driven transaction-manager="dataSourceTransactionManager"/> 
 
 </beans>
