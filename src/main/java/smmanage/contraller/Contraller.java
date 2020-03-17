@@ -1,5 +1,7 @@
 package smmanage.contraller;
 
+import java.util.ArrayList;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 
@@ -15,6 +17,7 @@ import smmanage.entity.Goods;
 import smmanage.entity.Staff;
 import smmanage.service.Delete;
 import smmanage.service.Insert;
+import smmanage.service.QueryAllGoods;
 import smmanage.service.Select;
 import smmanage.service.StaffSelect;
 import smmanage.service.Update;
@@ -31,10 +34,22 @@ public class Contraller {
 	private Delete delete;
 	@Resource
 	private StaffSelect staffselect;
+	@Resource
+	private QueryAllGoods queryall;
 	
 	@RequestMapping("LoginWithSession")
 	public String LoginWithSession() {
 		return "index";
+	}
+	
+	@RequestMapping("queryAll")
+	public ModelAndView queryAll() {
+		System.out.println("查询所有商品");
+		ArrayList<Goods> result= queryall.queryAllGoods();
+		ModelAndView mav=new ModelAndView();
+		mav.setViewName("allGoods");
+		mav.addObject("result", result);
+		return mav;
 	}
 	@RequestMapping("login")
 	public ModelAndView login(String name,String password,HttpSession session) {

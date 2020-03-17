@@ -16,8 +16,12 @@
 <input type="text" name="name">
 <input type="submit" value="查询"></form><br/>
 
+<form action="queryAll">
+<input type="submit" value="查询所有商品">
+</form>
+
 增加商品：<br/>
-<form action="add" method="post">
+<form action="add" method="post" >
 名称：<input type="text" name="name"><br/>
 价格：<input type="text" name="price"><br/>
 数量：<input type="text" name="number"><br/>

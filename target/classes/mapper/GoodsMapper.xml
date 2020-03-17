@@ -2,7 +2,11 @@
 
 <mapper namespace="smmanage.dao.GoodsMapper"><!-- 命名空间改成自己的映射类 -->
 	<select id="queryGoodsByName" resultType="smmanage.entity.Goods" parameterType="String"> <!-- resultType必须用全类名 -->
-	select * from goods where name= #{name}  
+	select * from goods where name like #{name}  
+	</select>
+	
+	<select id="queryAllGoods" resultType="smmanage.entity.Goods">
+	select * from goods order by name;
 	</select>
 	
 	<insert id="insertGoods" parameterType="smmanage.entity.Goods">
