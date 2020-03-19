@@ -28,5 +28,10 @@
 <input type="submit" value="提交">
 </form>
 
+批量增加商品：<br/>
+<form action="multipleAdd">
+<input type="text" name="multipleAdd" style="width: 200px;height: 200px" placeholder="请用逗号“，”分割">
+</form>
+
 </body>
 </html>

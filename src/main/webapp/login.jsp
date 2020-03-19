@@ -9,8 +9,8 @@
 <body>
 <img alt="奥利给就完事了！" src="/smmanage/static/登录题头.png" width="250" height="120">
 <form action="login" method="post">
-账号：<input type="text" name="name"><br/>
-密码：<input type="password" name="password"><br/>
+账号：<input type="text" name="name" required="required"><br/>
+密码：<input type="password" name="password" required="required"><br/>
 <input type="submit" value="登录">
 <input type="reset">
 </form>

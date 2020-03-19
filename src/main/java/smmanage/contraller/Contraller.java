@@ -91,6 +91,12 @@ public class Contraller {
 		}
 	}
 	
+	@RequestMapping("multipleAdd")
+	public ModelAndView multipleAdd(String param) {
+		String mul=param.split("，");
+		
+	}
+	
 	@RequestMapping("add")
 	public ModelAndView add(Goods goods) {
 		System.out.println("添加请求已拦截");

@@ -9,6 +9,6 @@
 <body>
 额....出现了一些错误。<br/>
 <%=request.getAttribute("result") %><br/>
-<a href="LoginWithSession">返回登录</a>
+<a href="login.jsp">返回登录</a>
 </body>
 </html>
