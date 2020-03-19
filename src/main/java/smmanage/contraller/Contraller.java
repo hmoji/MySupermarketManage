@@ -93,8 +93,12 @@ public class Contraller {
 	
 	@RequestMapping("multipleAdd")
 	public ModelAndView multipleAdd(String param) {
-		String mul=param.split("，");
-		
+		StringBuilder[] temp=param.split("-");
+		Goods[] mul= new Goods[temp.length];
+		int i=0;
+		for (String string : temp) {
+			
+		}
 	}
 	
 	@RequestMapping("add")

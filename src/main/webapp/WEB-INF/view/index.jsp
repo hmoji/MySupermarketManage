@@ -30,7 +30,7 @@
 
 批量增加商品：<br/>
 <form action="multipleAdd">
-<input type="text" name="multipleAdd" style="width: 200px;height: 200px" placeholder="请用逗号“，”分割">
+<input type="text" name="multipleAdd" style="width: 200px;height: 200px" placeholder="单个商品的属性请用“，”分割，多个商品之间请用逗号“-”分割">
 </form>
 
 </body>
