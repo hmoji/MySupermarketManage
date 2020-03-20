@@ -29,8 +29,9 @@
 </form>
 
 批量增加商品：<br/>
-<form action="multipleAdd">
-<input type="text" name="multipleAdd" style="width: 200px;height: 200px" placeholder="单个商品的属性请用“，”分割，多个商品之间请用逗号“-”分割">
+<form action="multipleAdd" method="post">
+<textarea rows="10" cols="25" name="param" placeholder="单个商品的属性请用“-”分割，多个商品之间请用“，”分割"></textarea><br/>
+<input type="submit" value="提交">
 </form>
 
 </body>

@@ -5,11 +5,8 @@ import java.util.ArrayList;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 
-import org.apache.ibatis.session.SqlSession;
-import org.apache.tomcat.util.descriptor.web.LoginConfig;
-import org.mybatis.spring.SqlSessionFactoryBean;
+
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -21,6 +18,8 @@ import smmanage.service.QueryAllGoods;
 import smmanage.service.Select;
 import smmanage.service.StaffSelect;
 import smmanage.service.Update;
+import smmanage.util.MultipleAdd;
+import smmanage.util.ToGood;
 
 @Controller
 public class Contraller {
@@ -93,12 +92,15 @@ public class Contraller {
 	
 	@RequestMapping("multipleAdd")
 	public ModelAndView multipleAdd(String param) {
-		StringBuilder[] temp=param.split("-");
-		Goods[] mul= new Goods[temp.length];
-		int i=0;
-		for (String string : temp) {
-			
-		}
+		String[] temp=param.split("，");
+		ToGood toGood=new ToGood();
+		Goods[] goods=toGood.toGood(temp);
+		ModelAndView mav=new ModelAndView();
+		mav.setViewName("InsertResult");
+		boolean result=MultipleAdd.multipleAdd(goods);
+		if(result) 
+			return mav.addObject("insertresult", "添加成功！");
+		return mav.addObject("insertresult", "添加失败！");
 	}
 	
 	@RequestMapping("add")
