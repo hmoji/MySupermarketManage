@@ -20,7 +20,14 @@ import smmanage.service.StaffSelect;
 import smmanage.service.Update;
 import smmanage.util.MultipleAdd;
 import smmanage.util.ToGood;
-
+/**
+ * 
+ * @Title: Contraller
+ * @Description:控制器模块
+ * @author Hmoji
+ * @date 2020年3月21日
+ * @time 下午9:48:36
+ */
 @Controller
 public class Contraller {
 	@Resource
@@ -35,12 +42,27 @@ public class Contraller {
 	private StaffSelect staffselect;
 	@Resource
 	private QueryAllGoods queryall;
-	
+	/**
+	 * 
+	 * @return_type: String
+	 * @Description:带session返回到index，帮助权限管理
+	 * @author Hmoji
+	 * @date 2020年3月21日
+	 * @time 下午9:50:30
+	 */
 	@RequestMapping("LoginWithSession")
 	public String LoginWithSession() {
 		return "index";
 	}
-	
+	/**
+	 * 返回ArrayList，若成功转发到allGoods
+	 * 
+	 * @return_type: ModelAndView
+	 * @Description:查询所有商品 
+	 * @author Hmoji
+	 * @date 2020年3月21日
+	 * @time 下午9:51:17
+	 */
 	@RequestMapping("queryAll")
 	public ModelAndView queryAll() {
 		System.out.println("查询所有商品");
@@ -50,6 +72,15 @@ public class Contraller {
 		mav.addObject("result", result);
 		return mav;
 	}
+	/**
+	 * 创建并保存session，若成功转发到到index，否则转发到到Error
+	 * 
+	 * @return_type: ModelAndView
+	 * @Description:接受登陆（login）请求
+	 * @author Hmoji
+	 * @date 2020年3月21日
+	 * @time 下午9:52:08
+	 */
 	@RequestMapping("login")
 	public ModelAndView login(String name,String password,HttpSession session) {
 		System.out.println("登录请求已拦截");
@@ -67,7 +98,15 @@ public class Contraller {
 			return mav;
 		}
 	}
-	
+	/**
+	 * 返回商品的各个元素，
+	 * 
+	 * @return_type: ModelAndView
+	 * @Description:查询单个商品请求 
+	 * @author Hmoji
+	 * @date 2020年3月21日
+	 * @time 下午9:54:00
+	 */
 	@RequestMapping("select")
 	public ModelAndView select(String name) {
 		System.out.println("查询请求已拦截");
@@ -89,7 +128,16 @@ public class Contraller {
 			return mav;
 		}
 	}
-	
+	/**
+	 * 使用“，”分割（split）商品，使用“-”分割商品内的各个属性
+	 * 添加结果转发到insertresult
+	 * 
+	 * @return_type: ModelAndView
+	 * @Description:批量增加商品 
+	 * @author Hmoji
+	 * @date 2020年3月21日
+	 * @time 下午10:05:05
+	 */
 	@RequestMapping("multipleAdd")
 	public ModelAndView multipleAdd(String param) {
 		String[] temp=param.split("，");
@@ -102,7 +150,15 @@ public class Contraller {
 			return mav.addObject("insertresult", "添加成功！");
 		return mav.addObject("insertresult", "添加失败！");
 	}
-	
+	/**
+	 * 结果转发到insertresult
+	 * 
+	 * @return_type: ModelAndView
+	 * @Description:增加单个商品 
+	 * @author Hmoji
+	 * @date 2020年3月21日
+	 * @time 下午10:07:14
+	 */
 	@RequestMapping("add")
 	public ModelAndView add(Goods goods) {
 		System.out.println("添加请求已拦截");
@@ -113,7 +169,15 @@ public class Contraller {
 			return mav.addObject("insertresult", "添加成功！");
 		return mav.addObject("insertresult", "添加失败！");
 	}
-	
+	/**
+	 * 修改结果转发到updateresult
+	 * 
+	 * @return_type: ModelAndView
+	 * @Description:修改单个商品信息 
+	 * @author Hmoji
+	 * @date 2020年3月21日
+	 * @time 下午10:07:50
+	 */
 	@RequestMapping("update")
 	public ModelAndView update(Goods goods) {
 		System.out.println("修改请求已拦截");
@@ -125,7 +189,15 @@ public class Contraller {
 			return mav.addObject("updateresult", "修改成功！");
 		return mav.addObject("updateresult", "修改失败！");
 	}
-	
+	/**
+	 * 删除结果转发到deleteresult
+	 * 
+	 * @return_type: ModelAndView
+	 * @Description:删除单个商品 
+	 * @author Hmoji
+	 * @date 2020年3月21日
+	 * @time 下午10:08:26
+	 */
 	@RequestMapping("delete")
 	public ModelAndView delete(String name) {
 		System.out.println("删除请求已拦截");

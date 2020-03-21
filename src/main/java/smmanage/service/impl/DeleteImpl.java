@@ -7,6 +7,15 @@ import org.springframework.transaction.annotation.Transactional;
 
 import smmanage.dao.GoodsMapper;
 import smmanage.service.Delete;
+
+/**
+ * 
+ * @Title: DeleteImpl
+ * @Description:服务实体类，删除单个商品
+ * @author Hmoji
+ * @date 2020年3月21日
+ * @time 下午10:24:37
+ */
 @Service
 @Transactional
 public class DeleteImpl implements Delete{

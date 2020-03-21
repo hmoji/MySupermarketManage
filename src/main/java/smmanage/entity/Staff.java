@@ -1,5 +1,12 @@
 package smmanage.entity;
-
+/**
+ * 
+ * @Title: Staff
+ * @Description:实体层，映射数据库里的<code>staff</code>库
+ * @author Hmoji
+ * @date 2020年3月21日
+ * @time 下午10:10:59
+ */
 public class Staff {
 private String name;
 private String password;

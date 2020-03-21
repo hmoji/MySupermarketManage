@@ -8,6 +8,16 @@ import org.springframework.transaction.annotation.Transactional;
 import smmanage.dao.GoodsMapper;
 import smmanage.entity.Goods;
 import smmanage.service.Update;
+
+/**
+ * 
+ * @Title: UpdateImpl
+ * @Description:服务实体类，修改单个商品信息 
+ * @author Hmoji
+ * @date 2020年3月21日
+ * @time 下午10:27:32
+ */
+
 @Service
 @Transactional
 public class UpdateImpl implements Update {

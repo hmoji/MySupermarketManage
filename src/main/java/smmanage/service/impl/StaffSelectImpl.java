@@ -9,6 +9,16 @@ import smmanage.dao.GoodsMapper;
 import smmanage.dao.StaffMapper;
 import smmanage.entity.Staff;
 import smmanage.service.StaffSelect;
+
+/**
+ * 
+ * @Title: StaffSelectImpl
+ * @Description:服务实体类，查询单个员工 
+ * @author Hmoji
+ * @date 2020年3月21日
+ * @time 下午10:27:04
+ */
+
 @Service
 @Transactional
 public class StaffSelectImpl implements StaffSelect {
