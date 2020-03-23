@@ -25,13 +25,13 @@
 	<property name="password" value="${jdbc.passworld}"></property>
 </bean>
 
-<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+<bean id="sqlSessionFactory" class="com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean">
 	<property name="dataSource" ref="dataSource"></property>
 	<property name="mapperLocations" value="classpath:mapper/*.xml"></property>
 </bean>
 
 <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-	<property name="basePackage" value="smmanage.dao"></property>
+	<property name="basePackage" value="smmanage.dao,com.baomidou.mybatisplus.samples.quickstart.mapper"></property>
 </bean>
 
  
