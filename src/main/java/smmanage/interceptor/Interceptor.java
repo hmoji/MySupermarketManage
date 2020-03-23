@@ -36,7 +36,7 @@ public class Interceptor implements HandlerInterceptor {
 	public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView mav)
 			throws Exception {
 		System.out.println("拦截器1:FirstInterceptor-----后置增强方法：postHandle执行中");
-		mav.addObject("message", "拦截器postHandle");
+		//mav.addObject("message", "拦截器postHandle");
 	}
 	/*
 	 * 最终拦截，仅测试

@@ -98,6 +98,11 @@ public class Contraller {
 			return mav;
 		}
 	}
+	@RequestMapping("logout")
+	public String logout(HttpSession session) {
+		session.invalidate();
+		return "redirect:login.jsp";
+	}
 	/**
 	 * 返回商品的各个元素，
 	 * 

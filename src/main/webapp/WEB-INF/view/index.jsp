@@ -10,7 +10,7 @@
 <body>
 <h3>在使用前请确定mysql安全模式已关闭</h3>
 当前用户：<%Staff staff=(Staff)request.getSession().getAttribute("STAFF_SESSION");
-			out.print(staff.getName());%><br/>
+			out.print(staff.getName());%><a href="logout">注销</a><br/>
 商品查询：<br/>
 <form action="select">
 <input type="text" name="name">
