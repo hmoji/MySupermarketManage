@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import smmanage.dao.GoodsMapper;
 import smmanage.entity.Goods;
 import smmanage.entity.Staff;
 import smmanage.service.Delete;
@@ -18,6 +19,7 @@ import smmanage.service.QueryAllGoods;
 import smmanage.service.Select;
 import smmanage.service.StaffSelect;
 import smmanage.service.Update;
+import smmanage.service.impl.DeleteImpl;
 import smmanage.util.MultipleAdd;
 import smmanage.util.ToGood;
 /**
@@ -37,7 +39,7 @@ public class Contraller {
 	@Resource
 	private Update update;
 	@Resource
-	private Delete delete;
+	private DeleteImpl delete;
 	@Resource
 	private StaffSelect staffselect;
 	@Resource
@@ -208,9 +210,7 @@ public class Contraller {
 		System.out.println("删除请求已拦截");
 		ModelAndView mav=new ModelAndView();
 		mav.setViewName("DeleteResult");
-		boolean result=delete.DeleteSrevice(name);
-		if(result)
-			return mav.addObject("deleteresult", "删除成功");
-		return mav.addObject("deleteresult", "删除失败");
+		Integer result=delete.delete(name);
+		return mav.addObject("deleteresult", "删除了"+result+"条数据");
 	}
 }

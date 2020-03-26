@@ -2,7 +2,7 @@ package smmanage.dao;
 
 import org.springframework.stereotype.Repository;
 
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.baomidou.mybatisplus.mapper.BaseMapper;
 
 import smmanage.entity.Staff;
 /**

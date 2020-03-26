@@ -7,9 +7,9 @@ import smmanage.entity.Goods;
 
 public class Test {
 public static void main(String[] args) {
-	ApplicationContext Context = new ClassPathXmlApplicationContext("springConfig.xml");
-	GoodsMapper goodsMapper=(GoodsMapper)Context.getBean("goodsMapper");
-	Goods goods=goodsMapper.queryGoodsByName("test");
-	System.out.println(goods);
+	ApplicationContext Context = new ClassPathXmlApplicationContext("applicationContext.xml");
+	GoodsMapper goodsMapper=Context.getBean("goodsMapper",GoodsMapper.class);
+	Integer result=goodsMapper.deleteById("测试1");
+	System.out.println(result);
 }
 }

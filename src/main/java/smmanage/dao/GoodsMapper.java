@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 import org.springframework.stereotype.Repository;
 
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.baomidou.mybatisplus.mapper.BaseMapper;
 
 import smmanage.entity.Goods;
 /**
@@ -21,6 +21,5 @@ public interface GoodsMapper extends BaseMapper<Goods>{
 		Goods queryGoodsByName(String name);
 		boolean insertGoods(Goods goods);
 		boolean update(Goods goods);
-		boolean delete(String name);
 		ArrayList<Goods> queryAllGoods();
 }
