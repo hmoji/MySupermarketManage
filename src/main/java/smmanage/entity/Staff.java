@@ -1,8 +1,4 @@
 package smmanage.entity;
-
-import com.baomidou.mybatisplus.annotations.TableId;
-import com.baomidou.mybatisplus.annotations.TableLogic;
-
 /**
  * 
  * @Title: Staff
@@ -12,13 +8,9 @@ import com.baomidou.mybatisplus.annotations.TableLogic;
  * @time 下午10:10:59
  */
 public class Staff {
-@TableId
 private String name;
 private String password;
 private int level;
-@TableLogic
-private boolean flag;
-
 public String getName() {
 	return name;
 }
@@ -36,13 +28,6 @@ public int getLevel() {
 }
 public void setLevel(int level) {
 	this.level = level;
-}
-
-public boolean isFlag() {
-	return flag;
-}
-public void setFlag(boolean flag) {
-	this.flag = flag;
 }
 @Override
 public String toString() {

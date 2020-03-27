@@ -1,8 +1,5 @@
 package smmanage.entity;
 
-import com.baomidou.mybatisplus.annotations.TableId;
-import com.baomidou.mybatisplus.annotations.TableLogic;
-
 /**
  * 
  * @Title: Goods
@@ -12,12 +9,9 @@ import com.baomidou.mybatisplus.annotations.TableLogic;
  * @time 下午10:10:28
  */
 public class Goods {
-	@TableId
 	private String name;
 	private int price;
 	private int number;
-	@TableLogic
-	private boolean flag;
 
 	public String getName() {
 		return name;
@@ -41,15 +35,6 @@ public class Goods {
 
 	public void setNumber(int number) {
 		this.number = number;
-	}
-	
-
-	public boolean isFlag() {
-		return flag;
-	}
-
-	public void setFlag(boolean flag) {
-		this.flag = flag;
 	}
 
 	@Override

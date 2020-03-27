@@ -17,6 +17,9 @@
 	update goods set price=#{price},number=#{number} where name=#{name}
 	</update>
 	
+	<delete id="delete" parameterType="string">
+	delete from goods where name=#{name}
+	</delete>
 	
 
 </mapper>
