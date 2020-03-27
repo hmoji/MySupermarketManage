@@ -25,7 +25,7 @@
 	<property name="password" value="${jdbc.passworld}"></property>
 </bean>
 
-<bean id="sqlSessionFactory" class="com.baomidou.mybatisplus.spring.MybatisSqlSessionFactoryBean">
+<bean id="sqlSessionFactory" class="com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean">
 	<property name="dataSource" ref="dataSource"></property>
 	<property name="mapperLocations" value="classpath:mapper/*.xml"></property>
 </bean>
@@ -39,21 +39,7 @@
 	<property name="dataSource" ref="dataSource"></property>
 </bean>
 
+
 	<tx:annotation-driven transaction-manager="dataSourceTransactionManager"/> 
 
-<bean id="id" class="com.baomidou.mybatisplus.entity.GlobalConfiguration">
-	<property name="sqlInjector" ref="LogicSqlInjector"></property>
-	<property name="logicDeleteValue" value="false"></property>
-	<property name="logicNotDeleteValue" value="true"></property>
-	<property name="idType" value="5" />
-</bean>
-
-<bean id="LogicSqlInjector" class="com.baomidou.mybatisplus.mapper.LogicSqlInjector"></bean>
-
-<!-- xml热加载 -->
-<bean class="com.baomidou.mybatisplus.spring.MybatisMapperRefresh">
-        <constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"/>
-        <constructor-arg name="mapperLocations" value="classpath*:/MySupermarketManage/src/main/resources/*.xml"/>
-        <constructor-arg name="enabled" value="true"/>
-    </bean>
 </beans>

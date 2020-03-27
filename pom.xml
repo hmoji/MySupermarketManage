@@ -25,7 +25,7 @@
 <dependency>
     <groupId>com.baomidou</groupId>
     <artifactId>mybatis-plus</artifactId>
-    <version>2.3</version>
+    <version>3.3.1.tmp</version>
 </dependency>
 
 <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
@@ -54,7 +54,13 @@
     <artifactId>spring-jdbc</artifactId>
     <version>5.2.2.RELEASE</version>
 </dependency>
-
+<!-- https://mvnrepository.com/artifact/junit/junit -->
+<dependency>
+    <groupId>junit</groupId>
+    <artifactId>junit</artifactId>
+    <version>4.12</version>
+    <scope>test</scope>
+</dependency>
 
 <!-- https://mvnrepository.com/artifact/jstl/jstl -->
 <dependency>
@@ -97,13 +103,6 @@
     <version>2.7</version>
 </dependency>
 
-<!-- https://mvnrepository.com/artifact/junit/junit -->
-<dependency>
-    <groupId>junit</groupId>
-    <artifactId>junit</artifactId>
-    <version>4.12</version>
-  <!--   <scope>test</scope> -->
-</dependency>
 
 
   </dependencies>
