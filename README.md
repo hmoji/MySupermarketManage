@@ -30,6 +30,9 @@ bug
 =======
 - 压缩后的日志文件生成地址不正确
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of b5119fe... 添加xml热加载
+=======
 >>>>>>> parent of b5119fe... 添加xml热加载
 =======
 >>>>>>> parent of b5119fe... 添加xml热加载
@@ -91,6 +94,10 @@ bug
 - 2020年3月23日
   * 引入mybatis-plus，但不改变之前基于mybatis的代码，以后开发主要使用mybatis-plus
 <<<<<<< HEAD
+<<<<<<< HEAD
+  * 增加注销功能
+>>>>>>> parent of b5119fe... 添加xml热加载
+=======
   * 增加注销功能
 >>>>>>> parent of b5119fe... 添加xml热加载
 =======
